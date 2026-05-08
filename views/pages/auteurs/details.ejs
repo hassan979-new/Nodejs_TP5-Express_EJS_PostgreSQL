@@ -1,0 +1,16 @@
+<%- include('../../partials/header') %>
+<%- include('../../partials/navigation') %>
+
+<h1><%= auteur.prenom %> <%= auteur.nom %></h1>
+
+<p><%= auteur.biographie %></p>
+
+<h3>Livres</h3>
+
+<ul>
+  <% livres.forEach(livre => { %>
+    <li><%= livre.titre %></li>
+  <% }) %>
+</ul>
+
+<%- include('../../partials/footer') %>

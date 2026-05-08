@@ -1,0 +1,32 @@
+<%- include('../../partials/header') %>
+<%- include('../../partials/navigation') %>
+
+<h1>Modifier livre</h1>
+
+<form method="POST" action="/livres/<%= livre.id %>/modifier">
+
+  <input name="titre" value="<%= livre.titre %>">
+
+  <select name="auteur_id">
+    <% auteurs.forEach(a => { %>
+      <option value="<%= a.id %>" <%= a.id === livre.auteur_id ? 'selected' : '' %>>
+        <%= a.nom %> <%= a.prenom %>
+      </option>
+    <% }) %>
+  </select>
+
+  <input name="genre" value="<%= livre.genre %>">
+  <input name="isbn" value="<%= livre.isbn %>">
+
+  <textarea name="resume"><%= livre.resume %></textarea>
+
+  <label>
+    Disponible
+    <input type="checkbox" name="disponible" <%= livre.disponible ? 'checked' : '' %>>
+    
+  </label>
+
+  <button>Modifier</button>
+</form>
+
+<%- include('../../partials/footer') %>

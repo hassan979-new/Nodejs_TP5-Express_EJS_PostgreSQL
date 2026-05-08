@@ -1,0 +1,31 @@
+<%- include('../../partials/header') %>
+<%- include('../../partials/navigation') %>
+
+<h1>Liste des livres</h1>
+
+<a href="/livres/ajouter">Ajouter livre</a>
+
+<form method="GET" action="/livres/recherche">
+  <input name="q" placeholder="Rechercher..." value="<%= searchTerm %>">
+  <button>Search</button>
+</form>
+
+<ul>
+  <% livres.forEach(livre => { %>
+    <li>
+      <a href="/livres/<%= livre.id %>">
+        <%= livre.titre %>
+      </a>
+
+      - <%= livre.auteur_nom %> <%= livre.auteur_prenom %>
+
+      <a href="/livres/<%= livre.id %>/modifier">Modifier</a>
+
+      <form action="/livres/<%= livre.id %>/supprimer" method="POST" style="display:inline;">
+        <button class="btn-danger">Supprimer</button>
+      </form>
+    </li>
+  <% }) %>
+</ul>
+
+<%- include('../../partials/footer') %>

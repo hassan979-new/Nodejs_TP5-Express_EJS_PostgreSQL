@@ -1,0 +1,11 @@
+<%- include('../../partials/header') %>
+<%- include('../../partials/navigation') %>
+
+<h1><%= livre.titre %></h1>
+
+<p>Auteur: <%= livre.auteur_nom %> <%= livre.auteur_prenom %></p>
+<p>Genre: <%= livre.genre %></p>
+<p>ISBN: <%= livre.isbn %></p>
+<p><%= livre.resume %></p>
+
+<%- include('../../partials/footer') %>

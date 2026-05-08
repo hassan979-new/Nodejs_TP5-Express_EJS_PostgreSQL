@@ -1,0 +1,250 @@
+/* =========================
+   VARIABLES
+========================= */
+:root {
+  --primary: #2c3e50;
+  --secondary: #3498db;
+  --success: #2ecc71;
+  --danger: #e74c3c;
+  --warning: #f39c12;
+
+  --light: #f4f6f8;
+  --dark: #1a1a1a;
+  --white: #ffffff;
+
+  --border-radius: 8px;
+  --shadow: 0 2px 8px rgba(0,0,0,0.1);
+
+  --font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* =========================
+   BASE
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--light);
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* =========================
+   HEADER / NAV
+========================= */
+header {
+  background: var(--primary);
+  color: var(--white);
+  padding: 15px 0;
+}
+
+nav {
+  background: var(--primary);
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 6px 10px;
+  border-radius: var(--border-radius);
+  transition: 0.3s;
+}
+
+nav a:hover {
+  background: var(--secondary);
+}
+
+/* =========================
+   HEADINGS
+========================= */
+h1, h2, h3 {
+  margin: 15px 0;
+}
+
+/* =========================
+   LISTS (IMPORTANT FOR YOUR PAGES)
+========================= */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  background: var(--white);
+  margin: 10px 0;
+  padding: 12px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* =========================
+   LINKS INSIDE LISTS
+========================= */
+ul li a {
+  color: var(--secondary);
+  text-decoration: none;
+  margin-right: 10px;
+  font-weight: 500;
+}
+
+ul li a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   FORMS
+========================= */
+form {
+  background: var(--white);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  margin: 20px 0;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius);
+  outline: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--secondary);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+button,
+.btn {
+  display: inline-block;
+  padding: 8px 12px;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 14px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+button {
+  background: var(--secondary);
+  color: white;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+.btn-danger {
+  background: var(--danger);
+  color: white;
+}
+
+.btn-success {
+  background: var(--success);
+  color: white;
+}
+
+/* =========================
+   ACTION BUTTONS IN LISTS
+========================= */
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* =========================
+   TABLES (optional support)
+========================= */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--white);
+  box-shadow: var(--shadow);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+table th,
+table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+table th {
+  background: var(--primary);
+  color: var(--white);
+}
+
+/* =========================
+   CARDS
+========================= */
+.card {
+  background: var(--white);
+  padding: 15px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  margin: 10px 0;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: auto; 
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+  }
+
+  ul li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
